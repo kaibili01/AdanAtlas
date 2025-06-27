@@ -10,12 +10,27 @@
   margin-left: 1rem;
 }
 
+.nav-link:hover {
+  color: #0d6efd; /* Bootstrap primary */
+  text-decoration: underline;
+}
+
+
 /* Hero Section */
 .hero-section {
   position: relative;
   height: 100vh;
   overflow: hidden;
 }
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.55); /* semi-transparent black */
+  z-index: 0;
+}
+
 
 .hero-img {
   position: absolute;
@@ -32,8 +47,16 @@
 .hero-overlay {
   position: relative;
   z-index: 1;
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  padding: 0 1rem; /* Add padding for small screen spacing */
 }
+
+
 .hero-overlay h1,
 .hero-overlay p {
   color: white;
@@ -49,4 +72,19 @@
   .hero-overlay p {
     font-size: 1.25rem;
   }
+
+  .navbar-brand {
+    font-size: 1.25rem;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+  }
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+

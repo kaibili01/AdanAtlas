@@ -1,19 +1,39 @@
-/* Navbar */
+/* Navbar - Dark Theme Collapsible */
 .navbar-brand {
   font-size: 1.5rem;
   letter-spacing: 0.5px;
+  color: white;
 }
 
-.nav-link {
-  text-transform: uppercase;
+.navbar-dark .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-dark .navbar-toggler-icon {
+  filter: brightness(150%);
+}
+
+/* Links inside collapsed menu */
+.collapse .nav-link {
+  color: #f8f9fa; /* Light text for dark background */
+  padding: 0.5rem 0;
   font-weight: 500;
-  margin-left: 1rem;
+  text-transform: uppercase;
+  transition: color 0.2s ease-in-out;
 }
 
-.nav-link:hover {
-  color: #0d6efd; /* Bootstrap primary */
-  text-decoration: underline;
+.collapse .nav-link:hover,
+.collapse .nav-link:focus {
+  color: #0d6efd;
+  text-decoration: none;
 }
+
+/* Optional: Adjust spacing in collapsed menu */
+.collapse .nav {
+  gap: 0.5rem;
+}
+
+
 
 
 /* Hero Section */
@@ -81,10 +101,14 @@
     font-size: 0.9rem;
     margin-left: 0.5rem;
   }
+  .collapse .nav-link {
+    font-size: 0.95rem;
+  }
 }
 
 html {
   scroll-behavior: smooth;
 }
+
 
 

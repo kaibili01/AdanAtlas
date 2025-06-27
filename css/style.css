@@ -40,40 +40,36 @@
 .hero-section {
   position: relative;
   height: 100vh;
+  background-image: url('/assets/images/MamaBear.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* THIS keeps the background fixed */
   overflow: hidden;
 }
+
 
 .hero-section::before {
   content: "";
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.55); /* semi-transparent black */
+  background: rgba(0, 0, 0, 0.55);
   z-index: 0;
 }
 
 
-.hero-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  opacity: 0.9;
-  z-index: -1;
-}
 
 .hero-overlay {
   position: relative;
   z-index: 1;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  height: 100%;
+  align-items: center;
   text-align: center;
-  padding: 0 1rem; /* Add padding for small screen spacing */
+  padding: 0 1rem;
 }
 
 

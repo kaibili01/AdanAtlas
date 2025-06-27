@@ -97,6 +97,11 @@
     font-size: 0.9rem;
     margin-left: 0.5rem;
   }
+
+  .navbar {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
   .collapse .nav-link {
     font-size: 0.95rem;
   }

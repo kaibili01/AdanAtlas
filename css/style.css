@@ -59,18 +59,19 @@
   z-index: 0;
   pointer-events: none;
   mask-image: radial-gradient(
-    circle 150px at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    circle 300px at var(--mouse-x, 50%) var(--mouse-y, 50%),
     transparent 0%,
     black 80%
   );
   -webkit-mask-image: radial-gradient(
-    circle 150px at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    circle 300px at var(--mouse-x, 50%) var(--mouse-y, 50%),
     transparent 0%,
     black 80%
   );
   mask-repeat: no-repeat;
   -webkit-mask-repeat: no-repeat;
 }
+
 
 
 

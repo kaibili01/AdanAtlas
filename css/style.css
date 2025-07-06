@@ -1,32 +1,13 @@
-/* Pulse animation that changes the spotlight radius */
-@keyframes pulseMask {
+:root {
+  --spotlight-radius: 180px;
+}
+
+@keyframes pulseRadius {
   0%, 100% {
-    mask-image: radial-gradient(
-      circle 180px at var(--mouse-x, 50%) var(--mouse-y, 50%),
-      rgba(0, 0, 0, 0.9) 30%,
-      rgba(0, 0, 0, 0.7) 50%,
-      rgba(0, 0, 0, 0) 100%
-    );
-    -webkit-mask-image: radial-gradient(
-      circle 180px at var(--mouse-x, 50%) var(--mouse-y, 50%),
-      rgba(0, 0, 0, 0.9) 30%,
-      rgba(0, 0, 0, 0.7) 50%,
-      rgba(0, 0, 0, 0) 100%
-    );
+    --spotlight-radius: 180px;
   }
   50% {
-    mask-image: radial-gradient(
-      circle 210px at var(--mouse-x, 50%) var(--mouse-y, 50%),
-      rgba(0, 0, 0, 0.9) 30%,
-      rgba(0, 0, 0, 0.7) 50%,
-      rgba(0, 0, 0, 0) 100%
-    );
-    -webkit-mask-image: radial-gradient(
-      circle 210px at var(--mouse-x, 50%) var(--mouse-y, 50%),
-      rgba(0, 0, 0, 0.9) 30%,
-      rgba(0, 0, 0, 0.7) 50%,
-      rgba(0, 0, 0, 0) 100%
-    );
+    --spotlight-radius: 210px;
   }
 }
 
@@ -50,9 +31,12 @@ html, body {
   color: white;
   background: url('../images/MamaBear_color.png') no-repeat center center fixed;
   background-size: cover;
+
+  /* Animate spotlight radius only */
+  animation: pulseRadius 4s ease-in-out infinite;
 }
 
-/* Grayscale + red-tinted layer that will be masked by mouse movement */
+/* Grayscale + tint layer that is masked */
 .hero-section::before {
   content: "";
   position: absolute;
@@ -66,15 +50,15 @@ html, body {
   background-size: cover;
   pointer-events: none;
 
-  /* Initial mask */
+  /* Use dynamic spotlight radius and position */
   mask-image: radial-gradient(
-    circle 180px at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    circle var(--spotlight-radius) at var(--mouse-x, 50%) var(--mouse-y, 50%),
     rgba(0, 0, 0, 0.9) 30%,
     rgba(0, 0, 0, 0.7) 50%,
     rgba(0, 0, 0, 0) 100%
   );
   -webkit-mask-image: radial-gradient(
-    circle 180px at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    circle var(--spotlight-radius) at var(--mouse-x, 50%) var(--mouse-y, 50%),
     rgba(0, 0, 0, 0.9) 30%,
     rgba(0, 0, 0, 0.7) 50%,
     rgba(0, 0, 0, 0) 100%
@@ -84,7 +68,6 @@ html, body {
   mask-position: center;
   z-index: 1;
 
-  animation: pulseMask 4s ease-in-out infinite;
   will-change: mask-image, -webkit-mask-image;
   transition: mask-image 0.3s ease, -webkit-mask-image 0.3s ease;
 }

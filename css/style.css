@@ -1,3 +1,35 @@
+/* Pulse animation that changes the spotlight radius */
+@keyframes pulseMask {
+  0%, 100% {
+    mask-image: radial-gradient(
+      circle 180px at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(0, 0, 0, 0.9) 30%,
+      rgba(0, 0, 0, 0.7) 50%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    -webkit-mask-image: radial-gradient(
+      circle 180px at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(0, 0, 0, 0.9) 30%,
+      rgba(0, 0, 0, 0.7) 50%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+  50% {
+    mask-image: radial-gradient(
+      circle 210px at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(0, 0, 0, 0.9) 30%,
+      rgba(0, 0, 0, 0.7) 50%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    -webkit-mask-image: radial-gradient(
+      circle 210px at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(0, 0, 0, 0.9) 30%,
+      rgba(0, 0, 0, 0.7) 50%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+}
+
 /* Reset and base */
 html, body {
   height: 100%;
@@ -20,7 +52,7 @@ html, body {
   background-size: cover;
 }
 
-/* Color image layer that will be masked by mouse movement */
+/* Grayscale + red-tinted layer that will be masked by mouse movement */
 .hero-section::before {
   content: "";
   position: absolute;
@@ -29,26 +61,30 @@ html, body {
   width: 100%;
   height: 100%;
   background:
-  linear-gradient(rgba(255, 100, 100, 0.2), rgba(255, 100, 100, 0.9)), /* subtle red tint */
-   url('../images/MamaBear_dark.png') no-repeat center center fixed;
+    linear-gradient(rgba(255, 100, 100, 0.2), rgba(255, 100, 100, 0.9)),
+    url('../images/MamaBear_dark.png') no-repeat center center fixed;
   background-size: cover;
   pointer-events: none;
+
+  /* Initial mask */
   mask-image: radial-gradient(
-  circle 180px at var(--mouse-x, 50%) var(--mouse-y, 50%),
-  rgba(0, 0, 0, 0.9) 30%,   /* more opaque near the center */
-  rgba(0, 0, 0, 0.7) 50%,   /* transition area */
-  rgba(0, 0, 0, 0) 100%     /* fully transparent at edge */
-);
-  -webkit-mask-image: radial-gradient(
-    circle 150px at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    circle 180px at var(--mouse-x, 50%) var(--mouse-y, 50%),
     rgba(0, 0, 0, 0.9) 30%,
-  rgba(0, 0, 0, 0.7) 50%,
-  rgba(0, 0, 0, 0) 100%
+    rgba(0, 0, 0, 0.7) 50%,
+    rgba(0, 0, 0, 0) 100%
   );
+  -webkit-mask-image: radial-gradient(
+    circle 180px at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(0, 0, 0, 0.9) 30%,
+    rgba(0, 0, 0, 0.7) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+
   mask-repeat: no-repeat;
   mask-position: center;
   z-index: 1;
 
+  animation: pulseMask 4s ease-in-out infinite;
   will-change: mask-image, -webkit-mask-image;
   transition: mask-image 0.3s ease, -webkit-mask-image 0.3s ease;
 }

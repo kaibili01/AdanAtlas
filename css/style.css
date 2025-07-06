@@ -1,3 +1,9 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
 /* Navbar - Dark Theme Collapsible */
 .navbar-brand {
   font-size: 1.5rem;
@@ -38,42 +44,41 @@
 
 /* Hero Section */
 
- .hero-section {
+.hero-section {
   position: relative;
   height: 100vh;
+  width: 100vw;
   overflow: hidden;
   background-color: black;
+  border: 3px dashed red; /* for debugging */
 }
 
 .hero-section::before,
 .hero-section::after {
   content: "";
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0; right: 0; bottom: 0; left: 0;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */ /* ← Try disabling this */
   z-index: 0;
   pointer-events: none;
 }
 
 .hero-section::before {
-  background-image: url('../images/MamaBear.png'); /* grayscale version */
+  background-image: url('../images/MamaBear.png');
 }
 
 .hero-section::after {
-  background-image: url('../images/MamaBear_2.png'); /* color version */
-
+  background-image: url('../images/MamaBear_2.png');
   mask-image: radial-gradient(
     ellipse 300px 200px at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    white 0%,
-    transparent 100%
+    white 0%, transparent 100%
   );
   -webkit-mask-image: radial-gradient(
     ellipse 300px 200px at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    white 0%,
-    transparent 100%
+    white 0%, transparent 100%
   );
   mask-repeat: no-repeat;
   -webkit-mask-repeat: no-repeat;

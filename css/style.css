@@ -1,9 +1,14 @@
+/* Reset and base */
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background-color: black;
 }
+
 /* Navbar - Dark Theme Collapsible */
 .navbar-brand {
   font-size: 1.5rem;
@@ -21,7 +26,7 @@ html, body {
 
 /* Links inside collapsed menu */
 .collapse .nav-link {
-  color: #f8f9fa; /* Light text for dark background */
+  color: #f8f9fa;
   padding: 0.5rem 0;
   font-weight: 500;
   text-transform: uppercase;
@@ -34,40 +39,41 @@ html, body {
   text-decoration: none;
 }
 
-/* Optional: Adjust spacing in collapsed menu */
 .collapse .nav {
   gap: 0.5rem;
 }
 
-
-
-
 /* Hero Section */
-
 .hero-section {
   position: relative;
+  width: 100%;
   height: 100vh;
-  width: 100vw;
   overflow: hidden;
-  background-color: black;
-  border: 3px dashed red; /* for debugging */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  z-index: 1;
+  /* border: 3px dashed red;  Remove after debug */
 }
 
 .hero-section::before,
 .hero-section::after {
   content: "";
   position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
-  background-size: cover;
-  background-position: center;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  background-position: center center;
   background-repeat: no-repeat;
-  /* background-attachment: fixed; */ /* ← Try disabling this */
-  z-index: 0;
+  background-size: cover;
   pointer-events: none;
+  z-index: -1;
 }
 
 .hero-section::before {
   background-image: url('../images/MamaBear.png');
+  /* Optional debug bg color: uncomment below to see coverage */
+  /* background-color: rgba(255,0,0,0.1); */
 }
 
 .hero-section::after {
@@ -85,79 +91,46 @@ html, body {
   transition: mask-image 0.2s, -webkit-mask-image 0.2s;
 }
 
-
-
-
-
-
-
+/* Hero Overlay Text */
 .hero-overlay {
   position: relative;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
+  z-index: 2;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  padding: 0 1rem;
+  justify-content: center;
 }
 
-
+/* Text styles */
 .hero-overlay h1,
 .hero-overlay p {
-  color: white;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+  text-shadow: 0 2px 6px rgba(0,0,0,0.7);
 }
 
-
-
-
-
-.project-img {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  max-height: 300px;
-  object-fit: cover;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-
+/* Responsive typography */
 @media (max-width: 768px) {
   .hero-overlay h1 {
     font-size: 2.5rem;
   }
-
   .hero-overlay p {
     font-size: 1.25rem;
   }
-
   .navbar-brand {
     font-size: 1.25rem;
   }
-
   .nav-link {
     font-size: 0.9rem;
     margin-left: 0.5rem;
   }
-
-  .navbar {
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-}
-
   .collapse .nav-link {
     font-size: 0.95rem;
   }
+  .navbar {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  }
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-
-
+/* Other styles like .project-img, etc. remain unchanged */

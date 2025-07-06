@@ -28,30 +28,30 @@ html, body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('../images/MamaBear_dark.png') no-repeat center center fixed;
+  background:
+  linear-gradient(rgba(255, 100, 100, 0.2), rgba(255, 100, 100, 0.9)), /* subtle red tint */
+   url('../images/MamaBear_dark.png') no-repeat center center fixed;
   background-size: cover;
   pointer-events: none;
   mask-image: radial-gradient(
-    circle 150px at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    rgba(0, 0, 0, 1),
-    rgba(0, 0, 0, 0.5) 60%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  circle 180px at var(--mouse-x, 50%) var(--mouse-y, 50%),
+  rgba(0, 0, 0, 0.9) 30%,   /* more opaque near the center */
+  rgba(0, 0, 0, 0.7) 50%,   /* transition area */
+  rgba(0, 0, 0, 0) 100%     /* fully transparent at edge */
+);
   -webkit-mask-image: radial-gradient(
     circle 150px at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    rgba(0, 0, 0, 1),
-    rgba(0, 0, 0, 0.5) 60%,
-    rgba(0, 0, 0, 0) 100%
+    rgba(0, 0, 0, 0.9) 30%,
+  rgba(0, 0, 0, 0.7) 50%,
+  rgba(0, 0, 0, 0) 100%
   );
   mask-repeat: no-repeat;
   mask-position: center;
   z-index: 1;
-}
 
-.hero-section::before {
   will-change: mask-image, -webkit-mask-image;
+  transition: mask-image 0.3s ease, -webkit-mask-image 0.3s ease;
 }
-
 
 /* Text overlay */
 .hero-overlay {

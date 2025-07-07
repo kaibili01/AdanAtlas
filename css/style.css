@@ -79,9 +79,12 @@ html, body {
   margin: 0;
 }
 
-
-/* Medium devices (tablets, 768px and down) */
+/* Tablet background and ripple adjustments */
 @media (max-width: 768px) {
+  .hero-section {
+    background-image: url('../images/MamaBear_color_768x1024.png');
+  }
+
   .main-ripple {
     width: 200px;
     height: 200px;
@@ -97,8 +100,12 @@ html, body {
   }
 }
 
-/* Small devices (phones, 480px and down) */
+/* Mobile background and ripple adjustments */
 @media (max-width: 480px) {
+  .hero-section {
+    background-image: url('../images/MamaBear_color_480x800.png');
+  }
+
   .main-ripple,
   .small-bear-ripple {
     display: none; /* Optional: Hide ripples on very small screens */

@@ -81,10 +81,11 @@ html, body {
 
 /* ----------- Responsive Backgrounds & Ripple Adjustments ----------- */
 
-/* Tablets: max-width 768px */
+/* Tablets */
 @media (max-width: 768px) {
   .hero-section {
-    background-image: url('../images/MamaBear_color_768x1024.png');
+    background: url('../images/MamaBear_color_768x1024.png') no-repeat center center fixed;
+    background-size: cover;
   }
 
   .main-ripple {
@@ -102,30 +103,33 @@ html, body {
   }
 }
 
-/* Phones: max-width 480px (default image) */
+/* Phones */
 @media (max-width: 480px) {
   .hero-section {
-    background-image: url('../images/MamaBear_color_480x800.png');
+    background: url('../images/MamaBear_color_480x800.png') no-repeat center center fixed;
+    background-size: cover;
   }
 
   .main-ripple,
   .small-bear-ripple {
-    display: none; /* Optional: Hide ripples on small screens */
+    display: none;
   }
 }
 
-/* Retina 2x for phones */
+/* Retina 2x */
 @media (max-width: 480px) and (-webkit-min-device-pixel-ratio: 2),
        (max-width: 480px) and (min-resolution: 192dpi) {
   .hero-section {
-    background-image: url('../images/MamaBear_color_960x1600.png');
+    background: url('../images/MamaBear_color_960x1600.png') no-repeat center center fixed;
+    background-size: cover;
   }
 }
 
-/* Retina 3x for phones */
+/* Retina 3x */
 @media (max-width: 480px) and (-webkit-min-device-pixel-ratio: 3),
        (max-width: 480px) and (min-resolution: 288dpi) {
   .hero-section {
-    background-image: url('../images/MamaBear_color_1440x2400.png');
+    background: url('../images/MamaBear_color_1440x2400.png') no-repeat center center fixed;
+    background-size: cover;
   }
 }

@@ -18,7 +18,7 @@
   }
 }
 
-/* Reset and base */
+/* Reset and base styles */
 html, body {
   height: 100%;
   margin: 0;
@@ -39,26 +39,24 @@ html, body {
   background-size: cover;
 }
 
-/* Large ripple (center of big bear, updated position) */
-.hero-section::before {
-  content: "";
+/* Large Ripple on Main Bear */
+.main-ripple {
   position: absolute;
-  top: calc(50% - 170px);   /* Previously 50% - 170px (30px down from original) */
-  left: calc(50% - 150px);  /* Moved another 50px to the left */
+  top: calc(405px * 0.8);   /* 20% up = 324px */
+  left: calc(620px * 1.1);  /* 10% right = 682px */
   width: 300px;
   height: 300px;
-  transform: translate(-50%, -50%);
   background: var(--pulse-color-strong);
   border-radius: 50%;
   animation: ripplePulse 4s ease-in-out infinite;
   z-index: 1;
 }
 
-/* Small ripple (center of small bear) */
+/* Smaller Ripple on Small Bear */
 .small-bear-ripple {
   position: absolute;
-  top: 20%;
-  left: calc(78% - 450px); /* Tuned for visual alignment with small bear */
+  top: 170px;
+  left: calc(1140px * 0.65 * 1.2);  /* 35% left then 20% right = 741px * 1.2 = 889.2px */
   width: 140px;
   height: 140px;
   background: var(--pulse-color);
@@ -67,7 +65,6 @@ html, body {
   z-index: 1;
 }
 
-/* Overlay text */
 .hero-overlay {
   position: absolute;
   top: 50%;

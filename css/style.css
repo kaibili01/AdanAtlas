@@ -3,7 +3,6 @@
   --pulse-color-strong: rgba(255, 100, 100, 0.6);
 }
 
-/* Ripple Pulse Animation */
 @keyframes ripplePulse {
   0% {
     transform: scale(0.8);
@@ -19,14 +18,13 @@
   }
 }
 
-/* Reset and base styles */
+/* Reset and base */
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
-/* Hero Section Background */
 .hero-section {
   position: relative;
   width: 100%;
@@ -41,12 +39,12 @@ html, body {
   background-size: cover;
 }
 
-/* Center ripple (large bear) */
+/* Large ripple (center of big bear, updated position) */
 .hero-section::before {
   content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: calc(50% - 170px);   /* Previously 50% - 170px (30px down from original) */
+  left: calc(50% - 150px);  /* Moved another 50px to the left */
   width: 300px;
   height: 300px;
   transform: translate(-50%, -50%);
@@ -56,20 +54,20 @@ html, body {
   z-index: 1;
 }
 
-/* Small ripple (small bear, upper right) */
+/* Small ripple (center of small bear) */
 .small-bear-ripple {
   position: absolute;
-  top: 18%;   /* Adjust this based on image */
-  left: 78%;  /* Adjust this based on image */
+  top: 20%;
+  left: calc(78% - 450px); /* Tuned for visual alignment with small bear */
   width: 140px;
   height: 140px;
   background: var(--pulse-color);
   border-radius: 50%;
-  animation: ripplePulse 5s ease-in-out infinite;
+  animation: ripplePulse 4s ease-in-out infinite;
   z-index: 1;
 }
 
-/* Central Text Overlay */
+/* Overlay text */
 .hero-overlay {
   position: absolute;
   top: 50%;

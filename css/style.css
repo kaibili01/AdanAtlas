@@ -35,7 +35,7 @@ html, body {
   justify-content: center;
   text-align: center;
   color: white;
-  background: url('../images/MamaBear_color_1440x2880.jpg') no-repeat center center fixed;
+  background: url('../images/MamaBear_color_1440x2400.png') no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -111,6 +111,19 @@ html, body {
     background: url('../images/MamaBear_color_1440x2880.jpg') no-repeat center top scroll;
     background-size: cover;
     min-height: -webkit-fill-available;
+  }
+   .main-ripple {
+    width: 200px;
+    height: 200px;
+    top: 40%;
+    left: 45%;
+  }
+
+  .small-bear-ripple {
+    width: 100px;
+    height: 100px;
+    top: 22%;
+    left: 52%;
   }
 }
 

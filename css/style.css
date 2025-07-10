@@ -110,10 +110,12 @@ html, body {
 @media (max-width: 480px) and (-webkit-min-device-pixel-ratio: 3),
        (max-width: 480px) and (min-resolution: 288dpi) {
   .hero-section {
-    background: url('../images/MamaBear_color_1440x2880.jpg') no-repeat center top scroll;
+    background: url('../images/MamaBear_color_1440x2880.jpg') no-repeat 30% top scroll;
     background-size: cover;
     min-height: -webkit-fill-available;
   }
+}
+
    .main-ripple {
     width: 200px;
     height: 200px;

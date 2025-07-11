@@ -38,6 +38,7 @@ html, body {
 }
 
 .hero-image {
+  border: 2px solid red; /* remove later */
   position: absolute;
   top: 0;
   left: 0;
@@ -105,10 +106,10 @@ html, body {
   }
 }
 
-/* Phones — shift image slightly */
+/* Phones — center the image by default */
 @media (max-width: 480px) {
   .hero-image {
-    object-position: 90% 10%;
+    object-position: center top;
   }
 
   .main-ripple,
@@ -120,7 +121,8 @@ html, body {
 /* iPhone 13 Pro Max and similar Retina 3x phones */
 @media only screen and (max-width: 428px) and (-webkit-min-device-pixel-ratio: 3) {
   .hero-image {
-    object-position: 88% 12%;
+    object-position: center 8%;
   }
 }
+
 

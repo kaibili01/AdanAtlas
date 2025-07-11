@@ -37,6 +37,7 @@ html, body {
   color: white;
   background: url('../images/MamaBear_color_1440x2400.png') no-repeat center center fixed;
   background-size: cover;
+  border: 5px solid limegreen;
 }
 
 .main-ripple {
@@ -105,7 +106,7 @@ html, body {
 /* Retina 3x (iPhone 13 Pro Max) */
 @media (max-width: 480px) and (min-resolution: 288dpi) {
   .hero-section {
-    background: url('../images/MamaBear_color_1440x2880.jpg') no-repeat top scroll;
+    background: url('../images/MamaBear_color_1284x2778.jpg') no-repeat top scroll;
     background-size: cover;
     background-position-x: 50%;
     background-position-y: top;

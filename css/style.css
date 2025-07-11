@@ -35,9 +35,17 @@ html, body {
   justify-content: center;
   text-align: center;
   color: white;
-  background: url('../images/MamaBear_color_1440x2400.png') no-repeat center center fixed;
-  background-size: cover;
-  border: 5px solid limegreen;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right top;
+  z-index: 0;
 }
 
 .main-ripple {
@@ -78,90 +86,10 @@ html, body {
   margin: 0;
 }
 
-/* ------------------ Responsive Backgrounds ------------------ */
+/* ------------------ Responsive Behavior ------------------ */
 
-/* Phones - base */
-@media (max-width: 480px) {
-  .hero-section {
-    background: url('../images/MamaBear_color_600x800.png') no-repeat center top scroll;
-    background-size: cover;
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
-  }
-
-  .main-ripple,
-  .small-bear-ripple {
-    display: none;
-  }
-}
-
-/* Retina 2x (e.g., iPhone 12) */
-@media (max-width: 480px) and (min-resolution: 192dpi) {
-  .hero-section {
-    background: url('../images/MamaBear_color_600x800.png') no-repeat center top scroll;
-    background-size: cover;
-  }
-}
-
-/* Retina 3x (iPhone 13 Pro Max) 
-@media (max-width: 480px) and (min-resolution: 192dpi){
-  .hero-section {
-    background: url('../images/MamaBear_color_600x800.png') no-repeat center top scroll;
-    background-size: cover;
-  }
-}
-*/
-
-
-/* 1170×2532 pixels at 460ppi 
-@media only screen 
-    and (width: 390px) 
-    and (height: 844px) 
-    and (-webkit-device-pixel-ratio: 3) { 
-      .hero-section {
-    background: url('../images/MamaBear_color_600x800.png') no-repeat center top scroll;
-    background-size: cover;
-  }
-    }
-*/
-
-    /*iPhone 14*/
-@media only screen
-and (width: 390px) 
-and (device-height: 844px)
-and (-webkit-device-pixel-ratio: 3) { .hero-section {
-    background: url('../images/MamaBear_color_600x800.png') no-repeat center top scroll;
-    background-size: cover;
-  }}
-
-/*iPhone 14 Pro*/
-@media only screen
-    and (width: 393px) 
-    and (device-height: 852px)
-    and (-webkit-device-pixel-ratio: 3) { .hero-section {
-    background: url('../images/MamaBear_color_600x800.png') no-repeat center top scroll;
-    background-size: cover;
-  }}
-
-/*iPhone 14 Pro Max*/
-@media only screen
-    and (device-width: 430px) 
-    and (device-height: 932px) 
-    and (-webkit-device-pixel-ratio: 3) { .hero-section {
-    background: url('../images/MamaBear_color_600x800.png') no-repeat center top scroll;
-    background-size: cover;
-  }}
-
-
-
-
-/* Tablets */
+/* Tablets: scale down ripple size */
 @media (max-width: 768px) {
-  .hero-section {
-    background: url('../images/MamaBear_color_600x800.png') no-repeat center center scroll;
-    background-size: cover;
-  }
-
   .main-ripple {
     width: 200px;
     height: 200px;
@@ -174,5 +102,24 @@ and (-webkit-device-pixel-ratio: 3) { .hero-section {
     height: 100px;
     top: 22%;
     left: 52%;
+  }
+}
+
+/* Phones: adjust image position, hide ripples */
+@media (max-width: 480px) {
+  .hero-image {
+    object-position: 95% top;
+  }
+
+  .main-ripple,
+  .small-bear-ripple {
+    display: none;
+  }
+}
+
+/* Specific: iPhone 13 Pro Max and similar */
+@media only screen and (max-width: 428px) and (-webkit-min-device-pixel-ratio: 3) {
+  .hero-image {
+    object-position: 100% top;
   }
 }

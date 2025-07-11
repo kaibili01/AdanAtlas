@@ -83,7 +83,7 @@ html, body {
 /* Phones - base */
 @media (max-width: 480px) {
   .hero-section {
-    background: url('../images/MamaBear_color_480x800.png') no-repeat center top scroll;
+    background: url('../images/MamaBear_color_600x800.png') no-repeat center top scroll;
     background-size: cover;
     min-height: 100vh;
     min-height: -webkit-fill-available;
@@ -98,27 +98,40 @@ html, body {
 /* Retina 2x (e.g., iPhone 12) */
 @media (max-width: 480px) and (min-resolution: 192dpi) {
   .hero-section {
-    background: url('../images/MamaBear_color_960x1600.png') no-repeat center top scroll;
+    background: url('../images/MamaBear_color_600x800.png') no-repeat center top scroll;
     background-size: cover;
   }
 }
 
-/* Retina 3x (iPhone 13 Pro Max) */
-@media (max-width: 480px) and (min-resolution: 288dpi) {
+/* Retina 3x (iPhone 13 Pro Max) 
+@media (max-width: 480px) and (min-resolution: 192dpi){
   .hero-section {
-    background: url('../images/MamaBear_color_1284x2778.jpg') no-repeat top scroll;
+    background: url('../images/MamaBear_color_600x800.png') no-repeat center top scroll;
     background-size: cover;
-    background-position-x: 50%;
-    background-position-y: top;
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
   }
 }
+*/
+
+
+/* 1170×2532 pixels at 460ppi */
+@media only screen 
+    and (width: 390px) 
+    and (height: 844px) 
+    and (-webkit-device-pixel-ratio: 3) { 
+      .hero-section {
+    background: url('../images/MamaBear_color_600x800.png') no-repeat center top scroll;
+    background-size: cover;
+  }
+    }
+
+
+
+
 
 /* Tablets */
 @media (max-width: 768px) {
   .hero-section {
-    background: url('../images/MamaBear_color_768x1024.png') no-repeat center center scroll;
+    background: url('../images/MamaBear_color_600x800.png') no-repeat center center scroll;
     background-size: cover;
   }
 

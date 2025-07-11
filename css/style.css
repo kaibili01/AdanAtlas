@@ -113,7 +113,7 @@ html, body {
 */
 
 
-/* 1170×2532 pixels at 460ppi */
+/* 1170×2532 pixels at 460ppi 
 @media only screen 
     and (width: 390px) 
     and (height: 844px) 
@@ -123,7 +123,34 @@ html, body {
     background-size: cover;
   }
     }
+*/
 
+    /*iPhone 14*/
+@media only screen
+and (width: 390px) 
+and (device-height: 844px)
+and (-webkit-device-pixel-ratio: 3) { .hero-section {
+    background: url('../images/MamaBear_color_600x800.png') no-repeat center top scroll;
+    background-size: cover;
+  }}
+
+/*iPhone 14 Pro*/
+@media only screen
+    and (width: 393px) 
+    and (device-height: 852px)
+    and (-webkit-device-pixel-ratio: 3) { .hero-section {
+    background: url('../images/MamaBear_color_600x800.png') no-repeat center top scroll;
+    background-size: cover;
+  }}
+
+/*iPhone 14 Pro Max*/
+@media only screen
+    and (device-width: 430px) 
+    and (device-height: 932px) 
+    and (-webkit-device-pixel-ratio: 3) { .hero-section {
+    background: url('../images/MamaBear_color_600x800.png') no-repeat center top scroll;
+    background-size: cover;
+  }}
 
 
 

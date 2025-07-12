@@ -36,23 +36,21 @@
     </div>
   </nav>
 
-  <!-- Hero Section with Responsive <img> -->
+  <!-- Hero Section with <picture> for responsive image -->
   <section class="hero-section">
-    <img 
-      src="images/MamaBear_color_1440x2880.jpg"
-      srcset="
-        images/MamaBear_color_480x800.png 480w,
-        images/MamaBear_color_600x800.png 600w,
-        images/MamaBear_color_768x1024.png 768w,
-        images/MamaBear_color_960x1600.png 960w,
-        images/MamaBear_color_1284x2778.jpg 1284w,
+    <picture>
+      <source srcset="
+        images/MamaBear_color_1440x2880.jpg 1440w,
         images/MamaBear_color_1440x2400.png 1440w,
-        images/MamaBear_color_1440x2880.jpg 1440w
-      "
-      sizes="100vw"
-      alt="Mama Bear"
-      class="hero-image"
-    />
+        images/MamaBear_color_1284x2778.jpg 1284w,
+        images/MamaBear_color_960x1600.png 960w,
+        images/MamaBear_color_768x1024.png 768w,
+        images/MamaBear_color_600x800.png 600w,
+        images/MamaBear_color_480x800.png 480w
+      " sizes="100vw" />
+      <img src="images/MamaBear_color_960x1600.png" alt="Mama Bear" class="hero-image" />
+    </picture>
+
     <div class="main-ripple"></div>
     <div class="small-bear-ripple"></div>
     <div class="hero-overlay">

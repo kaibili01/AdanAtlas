@@ -9,7 +9,7 @@
   100% { transform: scale(0.8); opacity: 0; }
 }
 
-/* Base styles */
+/* Base Styles */
 html, body {
   margin: 0;
   padding: 0;
@@ -101,20 +101,20 @@ p.lead {
 
 /* ------------------ Responsive Background Images ------------------ */
 
-/* ≥600px — larger phones */
-@media (min-width: 600px) {
-  .hero-section {
-    background-image: url("../images/MamaBear_color_600x800.jpg");
-  }
-}
-
-@media screen and (max-width: 430px) and (min-height: 900px) {
+/* iPhone 13 Pro Max (428x926 physical px @3x) */
+@media screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
   .hero-section {
     background-image: url("../images/MamaBear_color_430x930.jpg");
     background-position: center top;
   }
 }
 
+/* ≥600px — larger phones */
+@media (min-width: 600px) {
+  .hero-section {
+    background-image: url("../images/MamaBear_color_600x800.jpg");
+  }
+}
 
 /* ≥768px — tablets */
 @media (min-width: 768px) {
@@ -180,12 +180,5 @@ p.lead {
   .hero-section {
     background-image: url("../images/MamaBear_color_2880x1920.jpg");
     background-position: center 10%;
-  }
-}
-
-/* iPhone 13 Pro Max & similar tall Retina phones */
-@media screen and (max-width: 450px) and (min-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
-  .hero-section {
-    background-position: 60% 8%;
   }
 }

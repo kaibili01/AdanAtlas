@@ -4,21 +4,12 @@
 }
 
 @keyframes ripplePulse {
-  0% {
-    transform: scale(0.8);
-    opacity: 1;
-  }
-  70% {
-    transform: scale(1.4);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(0.8);
-    opacity: 0;
-  }
+  0% { transform: scale(0.8); opacity: 1; }
+  70% { transform: scale(1.4); opacity: 0; }
+  100% { transform: scale(0.8); opacity: 0; }
 }
 
-/* Reset and base styles */
+/* Base styles */
 html, body {
   margin: 0;
   padding: 0;
@@ -28,7 +19,7 @@ html, body {
   background-color: #000;
 }
 
-/* Hero Section with Background Image */
+/* Hero Section */
 .hero-section {
   position: relative;
   width: 100%;
@@ -38,21 +29,20 @@ html, body {
   align-items: center;
   justify-content: center;
   text-align: center;
+  background-color: #000;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;
   background-image: url("../images/MamaBear_color_480x800.jpg");
 }
 
-/* Ripple Animations */
-.main-ripple,
-.small-bear-ripple {
+/* Ripples */
+.main-ripple, .small-bear-ripple {
   position: absolute;
   border-radius: 50%;
   animation: ripplePulse 4s ease-in-out infinite;
   z-index: 1;
 }
-
 .main-ripple {
   width: 220px;
   height: 220px;
@@ -61,7 +51,6 @@ html, body {
   left: 45%;
   transform: translate(-50%, -50%);
 }
-
 .small-bear-ripple {
   width: 120px;
   height: 120px;
@@ -71,7 +60,7 @@ html, body {
   transform: translate(-50%, -50%);
 }
 
-/* Overlay text */
+/* Overlay */
 .hero-overlay {
   position: relative;
   z-index: 2;
@@ -79,36 +68,31 @@ html, body {
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
 }
 
-/* Section styles */
+/* Sections */
 section {
   padding: 3rem 1.5rem;
   text-align: center;
 }
-
 #about, #writing {
   background: white;
   color: #000;
 }
-
 #work, #contact {
   background: #f8f9fa;
   color: #000;
 }
 
-/* Headings and text */
+/* Headings */
 h1, h2 {
   font-weight: bold;
 }
-
 h1 {
   font-size: 2.25rem;
 }
-
 h2 {
   font-size: 1.75rem;
   margin-bottom: 1rem;
 }
-
 p.lead {
   max-width: 720px;
   margin: 0 auto;
@@ -117,30 +101,35 @@ p.lead {
 
 /* ------------------ Responsive Background Images ------------------ */
 
-/* ≥600px — small phones / large phones */
+/* ≥600px — larger phones */
 @media (min-width: 600px) {
   .hero-section {
     background-image: url("../images/MamaBear_color_600x800.jpg");
   }
 }
 
+@media screen and (max-width: 430px) and (min-height: 900px) {
+  .hero-section {
+    background-image: url("../images/MamaBear_color_430x930.jpg");
+    background-position: center top;
+  }
+}
+
+
 /* ≥768px — tablets */
 @media (min-width: 768px) {
   .hero-section {
     background-image: url("../images/MamaBear_color_768x1024.jpg");
   }
-
   h1 {
     font-size: 3rem;
   }
-
   .main-ripple {
     width: 260px;
     height: 260px;
     top: 38%;
     left: 42%;
   }
-
   .small-bear-ripple {
     width: 140px;
     height: 140px;
@@ -149,7 +138,7 @@ p.lead {
   }
 }
 
-/* ≥960px — portrait monitors or small laptops */
+/* ≥960px — small laptops */
 @media (min-width: 960px) {
   .hero-section {
     background-image: url("../images/MamaBear_color_960x1280.jpg");
@@ -162,7 +151,6 @@ p.lead {
     background-image: url("../images/MamaBear_color_1280x960.jpg");
     background-position: center 20%;
   }
-
   h1 {
     font-size: 3.5rem;
   }
@@ -174,7 +162,6 @@ p.lead {
     background-image: url("../images/MamaBear_color_1440x960.jpg");
     background-position: center 18%;
   }
-
   h1 {
     font-size: 4rem;
   }
@@ -188,10 +175,17 @@ p.lead {
   }
 }
 
-/* ≥2880px — Retina/4K displays */
-@media (min-width: 2560px) {
+/* ≥2880px — Retina 4K */
+@media (min-width: 2880px) {
   .hero-section {
     background-image: url("../images/MamaBear_color_2880x1920.jpg");
-    background-position: center 12%;
+    background-position: center 10%;
+  }
+}
+
+/* iPhone 13 Pro Max & similar tall Retina phones */
+@media screen and (max-width: 450px) and (min-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  .hero-section {
+    background-position: 60% 8%;
   }
 }

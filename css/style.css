@@ -18,13 +18,17 @@
   }
 }
 
-/* Base styles */
+/* Reset and base styles */
 html, body {
-  height: 100%;
   margin: 0;
   padding: 0;
+  height: 100%;
+  font-family: system-ui, sans-serif;
+  color: white;
+  background-color: #000;
 }
 
+/* Hero Section with Background Image */
 .hero-section {
   position: relative;
   width: 100%;
@@ -34,103 +38,160 @@ html, body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: white;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-image: url("../images/MamaBear_color_480x800.jpg");
 }
 
-.hero-image {
+/* Ripple Animations */
+.main-ripple,
+.small-bear-ripple {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 0;
-  z-index: 0;
-}
-
-.main-ripple {
-  position: absolute;
-  top: 38%;
-  left: 40%;
-  width: 300px;
-  height: 300px;
-  background: var(--pulse-color-strong);
   border-radius: 50%;
   animation: ripplePulse 4s ease-in-out infinite;
   z-index: 1;
+}
+
+.main-ripple {
+  width: 220px;
+  height: 220px;
+  background: var(--pulse-color-strong);
+  top: 38%;
+  left: 45%;
   transform: translate(-50%, -50%);
 }
 
 .small-bear-ripple {
-  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: var(--pulse-color);
   top: 20%;
   left: 50%;
-  width: 140px;
-  height: 140px;
-  background: var(--pulse-color);
-  border-radius: 50%;
-  animation: ripplePulse 4s ease-in-out infinite;
-  z-index: 1;
   transform: translate(-50%, -50%);
 }
 
+/* Overlay text */
 .hero-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
   z-index: 2;
-  max-width: 960px;
   padding: 1rem;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
-  margin: 0;
 }
 
-/* ------------------ Responsive Behavior ------------------ */
+/* Section styles */
+section {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
 
-/* Large desktop screens (e.g., 15” MacBook Pro) */
-@media (min-width: 1025px) {
-  .hero-image {
-    object-position: center 10%; /* shifts image down for better alignment */
+#about, #writing {
+  background: white;
+  color: #000;
+}
+
+#work, #contact {
+  background: #f8f9fa;
+  color: #000;
+}
+
+/* Headings and text */
+h1, h2 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2.25rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+p.lead {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 1.125rem;
+}
+
+/* ------------------ Responsive Background Images ------------------ */
+
+/* ≥600px — small phones / large phones */
+@media (min-width: 600px) {
+  .hero-section {
+    background-image: url("../images/MamaBear_color_600x800.jpg");
   }
 }
 
-/* Optional extra tweak for retina Macs */
-@media only screen and (min-width: 1025px) and (-webkit-min-device-pixel-ratio: 2) {
-  .hero-image {
-    object-position: center 12%; /* slightly more shift for retina display */
+/* ≥768px — tablets */
+@media (min-width: 768px) {
+  .hero-section {
+    background-image: url("../images/MamaBear_color_768x1024.jpg");
   }
-}
 
-/* Tablets */
-@media (max-width: 768px) {
-  .hero-image {
-    object-position: 85% 12%;
+  h1 {
+    font-size: 3rem;
+  }
+
+  .main-ripple {
+    width: 260px;
+    height: 260px;
+    top: 38%;
+    left: 42%;
   }
 
   .small-bear-ripple {
-    width: 100px;
-    height: 100px;
-    top: 22%;
+    width: 140px;
+    height: 140px;
+    top: 20%;
     left: 52%;
   }
 }
 
-/* Phones — improve iPhone viewport crop */
-@media (max-width: 480px) {
-  .hero-image {
-    object-position: 88% 14%;
-  }
-
-  .main-ripple,
-  .small-bear-ripple {
-    display: none;
+/* ≥960px — portrait monitors or small laptops */
+@media (min-width: 960px) {
+  .hero-section {
+    background-image: url("../images/MamaBear_color_960x1280.jpg");
   }
 }
 
-/* iPhone 13 Pro Max — fine-tune cropping */
-@media only screen and (max-width: 428px) and (-webkit-min-device-pixel-ratio: 3) {
-  .hero-image {
-    object-position: 88% 12%;
+/* ≥1280px — standard desktops */
+@media (min-width: 1280px) {
+  .hero-section {
+    background-image: url("../images/MamaBear_color_1280x960.jpg");
+    background-position: center 20%;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+}
+
+/* ≥1440px — wider desktops */
+@media (min-width: 1440px) {
+  .hero-section {
+    background-image: url("../images/MamaBear_color_1440x960.jpg");
+    background-position: center 18%;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+}
+
+/* ≥1920px — Full HD */
+@media (min-width: 1920px) {
+  .hero-section {
+    background-image: url("../images/MamaBear_color_1920x1080.jpg");
+    background-position: center 15%;
+  }
+}
+
+/* ≥2880px — Retina/4K displays */
+@media (min-width: 2560px) {
+  .hero-section {
+    background-image: url("../images/MamaBear_color_2880x1920.jpg");
+    background-position: center 12%;
   }
 }

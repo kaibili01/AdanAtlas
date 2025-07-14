@@ -88,10 +88,17 @@ html, body {
 
 /* ------------------ Responsive Behavior ------------------ */
 
-/* Desktop alignment fix */
+/* Large desktop screens (e.g., 15” MacBook Pro) */
 @media (min-width: 1025px) {
   .hero-image {
-    object-position: center 0;
+    object-position: center 10%; /* shifts image down for better alignment */
+  }
+}
+
+/* Optional extra tweak for retina Macs */
+@media only screen and (min-width: 1025px) and (-webkit-min-device-pixel-ratio: 2) {
+  .hero-image {
+    object-position: center 12%; /* slightly more shift for retina display */
   }
 }
 

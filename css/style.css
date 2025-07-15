@@ -19,6 +19,18 @@ html, body {
   background-color: #000;
 }
 
+/* Work thumbnails */
+.card-img-top {
+  border: 2px solid #000;
+  border-radius: 4px; /* Optional: keeps the corners smooth */
+}
+
+.card-img-top:hover {
+  border-color: #333;
+  transition: border-color 0.3s ease;
+}
+
+
 /* Hero Section */
 .hero-section {
   position: relative;

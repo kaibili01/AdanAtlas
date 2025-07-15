@@ -19,17 +19,62 @@ html, body {
   background-color: #000;
 }
 
-/* Work thumbnails */
-.card-img-top {
+/* Project Thumbnails */
+.project-thumb {
   border: 2px solid #000;
-  border-radius: 4px; /* Optional: keeps the corners smooth */
+  border-radius: 4px;
+  transition: transform 0.2s ease, border-color 0.3s ease;
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
-.card-img-top:hover {
+.project-thumb:hover {
+  transform: scale(1.03);
   border-color: #333;
-  transition: border-color 0.3s ease;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  filter: brightness(1.1);
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease,
+    border-color 0.3s ease;
 }
 
+/* Thumbnail Hover Overlay Label */
+.thumbnail-wrapper {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.thumbnail-wrapper .overlay-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 0.4rem 0;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.3s ease;
+}
+
+.thumbnail-wrapper:hover .overlay-label {
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+/* Ensure project description text is left-aligned */
+.card-body {
+  text-align: left;
+}
 
 /* Hero Section */
 .hero-section {
@@ -48,7 +93,7 @@ html, body {
   background-image: url("../images/MamaBear_color_480x800.jpg");
 }
 
-/* Ripples */
+/* Ripple Effects */
 .main-ripple, .small-bear-ripple {
   position: absolute;
   border-radius: 50%;
@@ -111,9 +156,8 @@ p.lead {
   font-size: 1.125rem;
 }
 
-/* ------------------ Responsive Background Images ------------------ */
+/* ------------------ Responsive Hero Backgrounds ------------------ */
 
-/* iPhone 13 Pro Max (428x926 physical px @3x) */
 @media screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
   .hero-section {
     background-image: url("../images/MamaBear_color_430x930.jpg");
@@ -121,14 +165,12 @@ p.lead {
   }
 }
 
-/* ≥600px — larger phones */
 @media (min-width: 600px) {
   .hero-section {
     background-image: url("../images/MamaBear_color_600x800.jpg");
   }
 }
 
-/* ≥768px — tablets */
 @media (min-width: 768px) {
   .hero-section {
     background-image: url("../images/MamaBear_color_768x1024.jpg");
@@ -150,14 +192,12 @@ p.lead {
   }
 }
 
-/* ≥960px — small laptops */
 @media (min-width: 960px) {
   .hero-section {
     background-image: url("../images/MamaBear_color_960x1280.jpg");
   }
 }
 
-/* ≥1280px — standard desktops */
 @media (min-width: 1280px) {
   .hero-section {
     background-image: url("../images/MamaBear_color_1280x960.jpg");
@@ -168,7 +208,6 @@ p.lead {
   }
 }
 
-/* ≥1440px — wider desktops */
 @media (min-width: 1440px) {
   .hero-section {
     background-image: url("../images/MamaBear_color_1440x960.jpg");
@@ -179,7 +218,6 @@ p.lead {
   }
 }
 
-/* ≥1920px — Full HD */
 @media (min-width: 1920px) {
   .hero-section {
     background-image: url("../images/MamaBear_color_1920x1080.jpg");
@@ -187,7 +225,6 @@ p.lead {
   }
 }
 
-/* ≥2880px — Retina 4K */
 @media (min-width: 2880px) {
   .hero-section {
     background-image: url("../images/MamaBear_color_2880x1920.jpg");

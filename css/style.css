@@ -131,47 +131,59 @@ html, body {
   }
 }
 
-/* Ripple Layers - Main */
+/* Main Bear Ripples */
 .main-ripple-1, .main-ripple-2, .main-ripple-3 {
   position: absolute;
-  width: 110px;  /* 50% of previous 220px */
-  height: 110px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   background: rgba(255, 100, 100, 0.4);
-  animation: ripplePulse 4s ease-out infinite;
-  top: 38%;
-  left: 45%;
+  animation: ripplePulse 6s ease-out infinite;
+  top: 38vh;
+  left: 45vw;
   z-index: 1;
 }
+
+.main-ripple-1 {
+  animation-delay: 4s;
+}
+
 .main-ripple-2 {
-  animation-delay: 1.33s;
+  animation-delay: 6s;
   background: rgba(255, 70, 70, 0.3);
 }
+
 .main-ripple-3 {
-  animation-delay: 2.66s;
+  animation-delay: 8s;
   background: rgba(255, 40, 40, 0.2);
 }
 
-/* Ripple Layers - Small Bear */
+/* Small Bear Ripples */
 .small-ripple-1, .small-ripple-2, .small-ripple-3 {
   position: absolute;
-  width: 60px;  /* 50% of previous 120px */
-  height: 60px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   background: rgba(255, 100, 100, 0.3);
-  animation: ripplePulse 4s ease-out infinite;
-  top: 20%;
-  left: 50%;
+  animation: ripplePulse 6s ease-out infinite;
+  top: 20vh;
+  left: 50vw;
   z-index: 1;
 }
+
+.small-ripple-1 {
+  animation-delay: 1s;
+}
+
 .small-ripple-2 {
-  animation-delay: 1.33s;
+  animation-delay: 3s;
   background: rgba(255, 70, 70, 0.25);
 }
+
 .small-ripple-3 {
-  animation-delay: 2.66s;
+  animation-delay: 5s;
   background: rgba(255, 40, 40, 0.2);
 }
 
